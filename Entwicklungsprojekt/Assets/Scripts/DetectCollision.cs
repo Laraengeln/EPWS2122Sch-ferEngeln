@@ -18,7 +18,7 @@ public class DetectCollision : MonoBehaviour
         
     }
 
-    // Wenn der Player vom Sprung aufkommt und auf einem Field landet, wird dieses geloescht
+    // Wenn der Player vom Sprung aufkommt und auf einem Feld landet, wird dieses geloescht
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.transform.localScale.x == player.startScale)

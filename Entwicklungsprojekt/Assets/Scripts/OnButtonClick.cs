@@ -14,10 +14,12 @@ public class OnButtonClick : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // button und gameManager bekommen die jeweiligen Komponenten zugeordnet
         button = GetComponent<Button>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 
-        button.onClick.AddListener(ShowTip);
+        // Wenn mit der Maus auf den Button geklickt wird, wird ShowImage() ausgeführt
+        button.onClick.AddListener(ShowImage);
     }
 
     // Update is called once per frame
@@ -26,7 +28,8 @@ public class OnButtonClick : MonoBehaviour
         
     }
 
-    void ShowTip()
+    // Wenn buttonImage inaktiv ist, wird es aktiv oder andersrum
+    void ShowImage()
     {
         Debug.Log(button.gameObject.name + " was clicked");
         if (!buttonImage.gameObject.activeInHierarchy)
