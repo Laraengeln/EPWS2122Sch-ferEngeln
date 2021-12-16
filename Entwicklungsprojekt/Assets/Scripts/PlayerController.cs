@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
-{
+{   
+    // Initialisierung der oeffentlichen Variablen
+    public float startScale = 45f;
+
+    // Initialisierung der privaten Variablen
     float horizontalInput;
     float verticalInput;
     float speed = 150f;
@@ -13,8 +17,6 @@ public class PlayerController : MonoBehaviour
     float jumpingTimeTimer = 0f;
     float jumpTimer = 0f;
 
-    public float startScale = 45f;
-    
     // Start is called before the first frame update
     void Start()
     {

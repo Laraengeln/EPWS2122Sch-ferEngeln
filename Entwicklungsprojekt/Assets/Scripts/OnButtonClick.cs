@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class OnButtonClick : MonoBehaviour
 {
+    // Initialisierung der oeffentlichen Variablen
+    public Image buttonImage;
 
+    // Initialisierung der privaten Variablen
     Button button;
     GameManager gameManager;
-
-    public Image buttonImage;
 
     // Start is called before the first frame update
     void Start()

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
-
+    // Initialisierung der privaten Variablen
     PlayerController player;
+
     // Start is called before the first frame update
     void Start()
     {
