@@ -27,9 +27,13 @@ public class GameManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {        
+        // Um das aktuelle Level zu speichern, wird der Progress-PlayerPref auf 1 gesetzt
+        PlayerPrefs.SetInt("Progress", 1);
+
         // Mit RandomOrder() wird zu Beginn des Spiels eine Reihenfolge der Felder festgelegt
         order = RandomOrder();
+
         // Spawnpositionen der Felder werden berechnet
         CalculateSpawnPositions();
         // Felder werden in der definierten Reihenfolge gespawnt

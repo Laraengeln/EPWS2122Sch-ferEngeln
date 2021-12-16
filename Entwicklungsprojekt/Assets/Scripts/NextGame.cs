@@ -25,7 +25,7 @@ public class NextGame : MonoBehaviour
         
     }
 
-    // Methode um Szene des Spiels zu laden und somit Spiel zu starten
+    // Methode um Szene des nächsten Spiels zu laden
     void StartNextGame()
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
