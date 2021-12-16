@@ -60,6 +60,16 @@ public class GameManager : MonoBehaviour
 
         for(int i=0; i<spawnPositions.Length; i++)
         {
+            // Text für richtiges Feld entsprechend der zu Beginn festgelegten Reihenfolge setzen und Feld in Array speichern
+            correctAnswerText = correctField.transform.GetChild(0).GetComponent<TextMeshPro>();
+            correctAnswerText.text = correctAnswers[order[i]];
+            correctFields[i] = correctField;
+
+            // Text für falsches Feld entsprechend der zu Beginn festgelegten Reihenfolge setzen und Feld in Array speichern
+            wrongAnswerText = wrongField.transform.GetChild(0).GetComponent<TextMeshPro>();
+            wrongAnswerText.text = wrongAnswers[order[i]];
+            wrongFields[i] = wrongField;
+
             upperCorrect = Random.Range(0, 2);
 
             if (upperCorrect == 1)
@@ -79,15 +89,6 @@ public class GameManager : MonoBehaviour
 
             }
 
-            // Text für richtiges Feld entsprechend der zu Beginn festgelegten Reihenfolge setzen und Feld in Array speichern
-            correctAnswerText = correctField.transform.GetChild(0).GetComponent<TextMeshPro>();
-            correctAnswerText.text = correctAnswers[order[i]];
-            correctFields[i] = correctField;
-
-            // Text für falsches Feld entsprechend der zu Beginn festgelegten Reihenfolge setzen und Feld in Array speichern
-            wrongAnswerText = wrongField.transform.GetChild(0).GetComponent<TextMeshPro>();
-            wrongAnswerText.text = wrongAnswers[order[i]];
-            wrongFields[i] = wrongField;
         }
     }
 
