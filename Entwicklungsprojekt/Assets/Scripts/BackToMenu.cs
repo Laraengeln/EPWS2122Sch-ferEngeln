@@ -23,7 +23,7 @@ public class BackToMenu : MonoBehaviour
         
     }
 
-    // Methode um bei Drücken des Buttons zurück zum Hauptmenu zu kommen und den PlayerPref dementsprechend auch auf 0 zu setzen
+    // Methode um bei Drï¿½cken des Buttons zurï¿½ck zum Hauptmenu zu kommen und den PlayerPref dementsprechend auch auf 0 zu setzen
     void BackToMainMenu()
     {
         Debug.Log(backButton.gameObject.name + " was clicked");
