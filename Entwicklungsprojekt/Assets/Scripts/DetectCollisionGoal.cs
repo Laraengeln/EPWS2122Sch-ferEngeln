@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class DetectCollision : MonoBehaviour
+public class DetectCollisionGoal : MonoBehaviour
 {
     // Initialisierung der privaten Variablen
     PlayerController player;
@@ -18,16 +18,16 @@ public class DetectCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     // Wenn der Player vom Sprung aufkommt und auf einem Feld landet, wird dieses geloescht
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.transform.localScale.x == player.startScale)
+       
+        if (collision.transform.localScale.x == player.startScale)
         {
-            Destroy(gameObject);
-            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
