@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
         jumpingTimeTimer -= Time.deltaTime;
         jumpTimer -= Time.deltaTime;
 
-        // nach jedem Sprung wieder auf Startgroeße zurück
+        // nach jedem Sprung wieder auf Startgroeï¿½e zurï¿½ck
         if (jumpingTimeTimer <= 0f)
         {
             transform.localScale = new Vector3(startScale, startScale, startScale);
@@ -44,18 +44,18 @@ public class PlayerController : MonoBehaviour
     // Methode um Spieler zu bewegen und zu springen
     void MovePlayer()
     {
-        // Input für Bewegung speichern
+        // Input fï¿½r Bewegung speichern
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        // Bewegung nach rechts/links abhängig von horizontalInput und Bewegung nach oben/unten abhängig von verticalInput
+        // Bewegung nach rechts/links abhï¿½ngig von horizontalInput und Bewegung nach oben/unten abhï¿½ngig von verticalInput
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
         transform.Translate(Vector3.up * verticalInput * Time.deltaTime * speed);
 
-        // Bei Drücken der Leertaste Skalierung erhoehen, da Player näher an Kamera erscheinen soll wegen Sprung
+        // Bei Drï¿½cken der Leertaste Skalierung erhoehen, da Player nï¿½her an Kamera erscheinen soll wegen Sprung
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // Nur Ausführen, wenn jumpTimer unter 0 ist -> Spam der Leertaste verhindern
+            // Nur Ausfï¿½hren, wenn jumpTimer unter 0 ist -> Spam der Leertaste verhindern
             // Nach Sprung Timer erneut setzen
             if (jumpTimer <= 0)
             {
@@ -79,4 +79,6 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, range, transform.position.z);
         }
     }
+
+
 }
