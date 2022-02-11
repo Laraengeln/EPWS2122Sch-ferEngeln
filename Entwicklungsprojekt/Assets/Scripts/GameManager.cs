@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI questionText;
     public GameObject correctField;
     public GameObject wrongField;
+    public int questionCounter;
 
     // Initialisierung der privaten Variablen
     GameObject[] correctFields = new GameObject[8];
