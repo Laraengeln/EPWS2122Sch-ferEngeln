@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
-{   
+{
     // Initialisierung der oeffentlichen Variablen
     public float startScale = 45f;
 
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, range, transform.position.z);
         }
+
+
     }
-
-
 }

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class DetectCollision : MonoBehaviour
 {
     // Initialisierung der privaten Variablen
-    PlayerController player;
+   PlayerController player;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,7 @@ public class DetectCollision : MonoBehaviour
     {
         if(collision.transform.localScale.x == player.startScale)
         {
+            transform.Translate(Vector2.down);
             Destroy(gameObject);
             SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         }
