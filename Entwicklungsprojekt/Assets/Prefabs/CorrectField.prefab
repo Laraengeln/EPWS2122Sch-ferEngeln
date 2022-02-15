@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 5783196670868547434}
   - component: {fileID: 5783196670868547432}
   - component: {fileID: 174420471203403715}
+
   - component: {fileID: 7304882189729904502}
+
   m_Layer: 0
   m_Name: CorrectField
   m_TagString: Untagged
@@ -137,6 +139,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13086a70cd7a4194ab0847467ad682f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 4020b61df512026dc72fe68e97a3f21e7c8fa56b
 --- !u!114 &7304882189729904502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,3 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77ed1728c22c4364b878e2b24a0c5dff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+>>>>>>> 4020b61df512026dc72fe68e97a3f21e7c8fa56b
+=======
+>>>>>>> 4020b61df512026dc72fe68e97a3f21e7c8fa56b
