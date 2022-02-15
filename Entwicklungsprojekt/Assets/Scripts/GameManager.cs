@@ -26,8 +26,8 @@ public class GameManager : MonoBehaviour
     TextMeshPro correctAnswerText;
     TextMeshPro wrongAnswerText;
     float[] spawnPositions = new float[8];
-    float firstSpawnPos = -330f;
-    float distanceBetweenFields = 95f;
+    float firstSpawnPos = -390f;
+    float distanceBetweenFields = 100f;
     float ySpawnPos = 55f;
     float ySpawnPosBubble = 150f;
     float xSpawnPosBubbleOffset = 300;
