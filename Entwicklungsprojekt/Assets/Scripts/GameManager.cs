@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI questionText;
     public GameObject correctField;
     public GameObject wrongField;
+    public GameObject speechBubbleCorrectAnswer;
+    public GameObject speechBubbleWrongAnswer;
+    public GameObject[] speechBubbleCorrectAnswers = new GameObject[8];
+    public GameObject[] speechBubbleWrongAnswers = new GameObject[8];
     public int questionCounter;
 
     // Initialisierung der privaten Variablen
@@ -22,9 +26,11 @@ public class GameManager : MonoBehaviour
     TextMeshPro correctAnswerText;
     TextMeshPro wrongAnswerText;
     float[] spawnPositions = new float[8];
-    float firstSpawnPos = -330f;
-    float distanceBetweenFields = 95f;
+    float firstSpawnPos = -390f;
+    float distanceBetweenFields = 100f;
     float ySpawnPos = 55f;
+    float ySpawnPosBubble = 150f;
+    float xSpawnPosBubbleOffset = 300;
 
     // Start is called before the first frame update
     void Start()
@@ -35,10 +41,16 @@ public class GameManager : MonoBehaviour
         // Mit RandomOrder() wird zu Beginn des Spiels eine Reihenfolge der Felder festgelegt
         order = RandomOrder();
 
+        // Erste Frage der Reihenfolge anzeigen
+        questionText.text = questions[order[0]];
+
         // Spawnpositionen der Felder werden berechnet
         CalculateSpawnPositions();
         // Felder werden in der definierten Reihenfolge gespawnt
         SpawnFields(order);
+
+        speechBubbleCorrectAnswers[0].SetActive(true);
+        speechBubbleWrongAnswers[0].SetActive(true);
     }
 
     // Update is called once per frame
@@ -62,39 +74,63 @@ public class GameManager : MonoBehaviour
     void SpawnFields(int[] order)
     {
         int upperCorrect;
+        System.Boolean bubbleToLeft = false;
+        Quaternion noRotation = new Quaternion(0, 0, 0, 0);
+        Quaternion xRotation = new Quaternion(180, 0, 0, 0);
+        Quaternion yRotation = new Quaternion(0, 180, 0, 0);
+        Quaternion zRotation = new Quaternion(0, 0, 180, 0);
 
         for(int i=0; i<spawnPositions.Length; i++)
         {
             // Text für richtiges Feld entsprechend der zu Beginn festgelegten Reihenfolge setzen und Feld in Array speichern
-            correctAnswerText = correctField.transform.GetChild(0).GetComponent<TextMeshPro>();
+            correctAnswerText = speechBubbleCorrectAnswer.transform.GetChild(0).GetComponent<TextMeshPro>();
             correctAnswerText.text = correctAnswers[order[i]];
-            correctFields[i] = correctField;
+            //correctFields[i] = correctField;
 
             // Text für falsches Feld entsprechend der zu Beginn festgelegten Reihenfolge setzen und Feld in Array speichern
-            wrongAnswerText = wrongField.transform.GetChild(0).GetComponent<TextMeshPro>();
+            wrongAnswerText = speechBubbleWrongAnswer.transform.GetChild(0).GetComponent<TextMeshPro>();
             wrongAnswerText.text = wrongAnswers[order[i]];
-            wrongFields[i] = wrongField;
+            //wrongFields[i] = wrongField;
 
             upperCorrect = Random.Range(0, 2);
 
+            if (i >= 4) bubbleToLeft = true;
+
             if (upperCorrect == 1)
             {
-                // richtiges Feld oben spawnen
-                Instantiate(correctField, new Vector3(spawnPositions[i], ySpawnPos, 80), correctField.transform.rotation);
-
-                // falsches Feld unten spawnen
-                Instantiate(wrongField, new Vector3(spawnPositions[i], -ySpawnPos, 80), wrongField.transform.rotation);
-            } else
-            {
-                // richtiges Feld unten spawnen
-                Instantiate(correctField, new Vector3(spawnPositions[i], -ySpawnPos, 80), correctField.transform.rotation);
-
-                // falsches Feld oben spawnen
-                Instantiate(wrongField, new Vector3(spawnPositions[i], ySpawnPos, 80), wrongField.transform.rotation);
-
+                if (bubbleToLeft)
+                {
+                    InstantiateFieldsWithAnswer(i, ySpawnPos, -ySpawnPos, ySpawnPosBubble, -ySpawnPosBubble, -xSpawnPosBubbleOffset, yRotation, zRotation, yRotation, zRotation);
+                }
+                else {
+                    InstantiateFieldsWithAnswer(i, ySpawnPos, -ySpawnPos, ySpawnPosBubble, -ySpawnPosBubble, xSpawnPosBubbleOffset, noRotation, xRotation, noRotation, xRotation);
+                }
             }
-
+            else
+            {
+                if (bubbleToLeft)
+                {
+                    InstantiateFieldsWithAnswer(i, -ySpawnPos, ySpawnPos, -ySpawnPosBubble, ySpawnPosBubble, -xSpawnPosBubbleOffset, zRotation, yRotation, zRotation, yRotation);
+                } else
+                {
+                    InstantiateFieldsWithAnswer(i, -ySpawnPos, ySpawnPos, -ySpawnPosBubble, ySpawnPosBubble, xSpawnPosBubbleOffset, xRotation, noRotation, xRotation, noRotation);
+                }
+            }
         }
+    }
+
+    void InstantiateFieldsWithAnswer(int pos, float yPosCorrect, float yPosWrong, float yPosCorrectBubble, float yPosWrongBubble, float xPosBubbleOffset, Quaternion rotationCorrectBubble, Quaternion rotationWrongBubble, Quaternion rotationCorrectAnswer, Quaternion rotationWrongAnswer)
+    {
+        Instantiate(correctField, new Vector3(spawnPositions[pos], yPosCorrect, 80), correctField.transform.rotation);
+        speechBubbleCorrectAnswer.transform.GetChild(0).transform.rotation = rotationCorrectAnswer;
+        speechBubbleCorrectAnswers[pos] = Instantiate(speechBubbleCorrectAnswer, new Vector3(spawnPositions[pos] + xPosBubbleOffset, yPosCorrectBubble, 80), rotationCorrectBubble) as GameObject;
+        speechBubbleCorrectAnswers[pos].SetActive(false);
+
+        // falsches Feld unten spawnen
+        Instantiate(wrongField, new Vector3(spawnPositions[pos], yPosWrong, 80), wrongField.transform.rotation);
+        speechBubbleWrongAnswer.transform.GetChild(0).transform.rotation = rotationWrongAnswer;
+        speechBubbleWrongAnswers[pos] = Instantiate(speechBubbleWrongAnswer, new Vector3(spawnPositions[pos] + xPosBubbleOffset, yPosWrongBubble, 80), rotationWrongBubble) as GameObject;
+        speechBubbleWrongAnswers[pos].SetActive(false);
     }
 
     // Methode um zufällige Reihenfolge der Felder festzulegen, wobei jedes Feld nur einmal vorkommen darf
@@ -128,11 +164,4 @@ public class GameManager : MonoBehaviour
         }
         return order;
     }
-
-    /*
-    void SetQuestion(int index)
-    {
-        questionText.text = questions[index];
-    }
-    */
 }
