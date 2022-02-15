@@ -21,24 +21,22 @@ public class DetectCollisionCorrect : MonoBehaviour
         questionText = GameObject.Find("Question Text").GetComponent<TextMeshProUGUI>();
 
         order = gameManager.order;
-
-        questionText.text = gameManager.questions[order[0]];
     }
 
     // Update is called once per frame
     void Update()
     {
-
+   
     }
 
     // Wenn der Player vom Sprung aufkommt und auf einem Feld landet, wird dieses geloescht
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (collision.transform.localScale.x == player.startScale)
-        //{
-            Debug.Log("counter: " + gameManager.questionCounter + "order[counter]" + order[gameManager.questionCounter] + "questions.length" + gameManager.questions.Length);
-            gameManager.questionCounter++;
-            questionText.text = gameManager.questions[order[gameManager.questionCounter]];
-        //}
+        gameManager.questionCounter++;
+        questionText.text = gameManager.questions[order[gameManager.questionCounter]];
+        Destroy(gameManager.speechBubbleCorrectAnswers[gameManager.questionCounter-1]);
+        Destroy(gameManager.speechBubbleWrongAnswers[gameManager.questionCounter-1]);
+        gameManager.speechBubbleCorrectAnswers[gameManager.questionCounter].SetActive(true);
+        gameManager.speechBubbleWrongAnswers[gameManager.questionCounter].SetActive(true);
     }
 }
