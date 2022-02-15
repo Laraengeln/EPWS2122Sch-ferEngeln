@@ -1395,10 +1395,17 @@ Transform:
   m_GameObject: {fileID: 752052884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 105}
+<<<<<<< HEAD
   m_LocalScale: {x: 56.833744, y: 56.386887, z: 0.044401366}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+=======
+  m_LocalScale: {x: 55, y: 55, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+>>>>>>> 4020b61df512026dc72fe68e97a3f21e7c8fa56b
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &772759818
 GameObject:
@@ -2027,6 +2034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonImage: {fileID: 830014409}
+<<<<<<< HEAD
 --- !u!1 &948696913
 GameObject:
   m_ObjectHideFlags: 0
@@ -2149,6 +2157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: add49e14848899b488174b25c8fb093a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> 4020b61df512026dc72fe68e97a3f21e7c8fa56b
 --- !u!1 &999466083
 GameObject:
   m_ObjectHideFlags: 0
@@ -2499,7 +2509,7 @@ GameObject:
   - component: {fileID: 1094589457}
   - component: {fileID: 1094589456}
   m_Layer: 0
-  m_Name: Goal
+  m_Name: End Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3179,8 +3189,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1736423713}
   - component: {fileID: 1736423712}
+  - component: {fileID: 1736423715}
+  - component: {fileID: 1736423714}
   m_Layer: 0
-  m_Name: Ground
+  m_Name: Start Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3245,12 +3257,55 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736423711}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -530, y: 0, z: 80}
   m_LocalScale: {x: 97.856, y: 97.856, z: 97.856}
+=======
+  m_LocalPosition: {x: -530, y: 1.2, z: 80}
+  m_LocalScale: {x: 75.92256, y: 75.92256, z: 75.92256}
+>>>>>>> 4020b61df512026dc72fe68e97a3f21e7c8fa56b
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1736423714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736423711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ed1728c22c4364b878e2b24a0c5dff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1736423715
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736423711}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.026881456, y: -0.18647036}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.4}
+    oldSize: {x: 2.09, y: 2.76}
+    newSize: {x: 2.09, y: 2.76}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.6157322, y: 0.88931745}
+  m_EdgeRadius: 0
 --- !u!1 &1772446564
 GameObject:
   m_ObjectHideFlags: 0
@@ -3331,8 +3386,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772446564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -528.7224, y: 0, z: 80}
   m_LocalScale: {x: 60, y: 60, z: 45}
+=======
+  m_LocalPosition: {x: -530, y: 0, z: 80}
+  m_LocalScale: {x: 45, y: 45, z: 45}
+>>>>>>> 4020b61df512026dc72fe68e97a3f21e7c8fa56b
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -3384,7 +3444,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.034427077, y: 0.37548336}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -3395,7 +3455,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.8828125}
+  m_Size: {x: 0.93114585, y: 0.6262234}
   m_EdgeRadius: 0
 --- !u!95 &1772446570
 Animator:
