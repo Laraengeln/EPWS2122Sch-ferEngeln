@@ -1396,15 +1396,21 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 105}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalScale: {x: 56.833744, y: 56.386887, z: 0.044401366}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
 =======
+=======
+>>>>>>> 4020b61df512026dc72fe68e97a3f21e7c8fa56b
   m_LocalScale: {x: 55, y: 55, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+<<<<<<< HEAD
+>>>>>>> 4020b61df512026dc72fe68e97a3f21e7c8fa56b
+=======
 >>>>>>> 4020b61df512026dc72fe68e97a3f21e7c8fa56b
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &772759818
@@ -2035,6 +2041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonImage: {fileID: 830014409}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &948696913
 GameObject:
   m_ObjectHideFlags: 0
@@ -2157,6 +2164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: add49e14848899b488174b25c8fb093a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> 4020b61df512026dc72fe68e97a3f21e7c8fa56b
 =======
 >>>>>>> 4020b61df512026dc72fe68e97a3f21e7c8fa56b
 --- !u!1 &999466083
@@ -3258,8 +3267,13 @@ Transform:
   m_GameObject: {fileID: 1736423711}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: -530, y: 0, z: 80}
   m_LocalScale: {x: 97.856, y: 97.856, z: 97.856}
+=======
+  m_LocalPosition: {x: -530, y: 1.2, z: 80}
+  m_LocalScale: {x: 75.92256, y: 75.92256, z: 75.92256}
+>>>>>>> 4020b61df512026dc72fe68e97a3f21e7c8fa56b
 =======
   m_LocalPosition: {x: -530, y: 1.2, z: 80}
   m_LocalScale: {x: 75.92256, y: 75.92256, z: 75.92256}
@@ -3387,9 +3401,12 @@ Transform:
   m_GameObject: {fileID: 1772446564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: -528.7224, y: 0, z: 80}
   m_LocalScale: {x: 60, y: 60, z: 45}
 =======
+=======
+>>>>>>> 4020b61df512026dc72fe68e97a3f21e7c8fa56b
   m_LocalPosition: {x: -530, y: 0, z: 80}
   m_LocalScale: {x: 45, y: 45, z: 45}
 >>>>>>> 4020b61df512026dc72fe68e97a3f21e7c8fa56b
