@@ -60,7 +60,6 @@ public class PlayerController : MonoBehaviour
         // Bei Dr�cken der Leertaste Skalierung erhoehen, da Player n�her an Kamera erscheinen soll wegen Sprung
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            animator.SetBool("isJumping", true);
             // Nur Ausf�hren, wenn jumpTimer unter 0 ist -> Spam der Leertaste verhindern
             // Nach Sprung Timer erneut setzen
             if (jumpTimer <= 0)
