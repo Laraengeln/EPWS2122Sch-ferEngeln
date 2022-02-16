@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     // Initialisierung der oeffentlichen Variablen
     public float startScale = 45f;
+    public Animator animator;
 
     // Initialisierung der privaten Variablen
     float horizontalInput;
