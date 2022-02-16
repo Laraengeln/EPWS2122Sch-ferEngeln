@@ -6,6 +6,8 @@ using System;
 
 public class Stopwatch : MonoBehaviour
 {
+    GameManager gameManager;
+
     bool stopWatchActive = false;
     float currentTime;
     public Text currentTimeText;
@@ -13,6 +15,8 @@ public class Stopwatch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+
         currentTime = 0;        //Der Anfang wird in Sekunden agezeigt
         //stopWatchActive = true;
     }
@@ -24,6 +28,7 @@ public class Stopwatch : MonoBehaviour
         {
             stopWatchActive = true;
         }
+
        if (stopWatchActive == true)
         {
             currentTime = currentTime + Time.deltaTime;
@@ -34,5 +39,7 @@ public class Stopwatch : MonoBehaviour
         }
        TimeSpan time = TimeSpan.FromSeconds(currentTime);
         currentTimeText.text = time.ToString(@"mm\:ss\:fff");
+
+        if (gameManager.questionCounter == gameManager.questions.Length) stopWatchActive = false;
     }
 }
