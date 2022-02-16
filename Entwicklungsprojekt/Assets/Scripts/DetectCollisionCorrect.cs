@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -32,11 +33,19 @@ public class DetectCollisionCorrect : MonoBehaviour
     // Wenn der Player vom Sprung aufkommt und auf einem Feld landet, wird dieses geloescht
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        gameManager.questionCounter++;
-        questionText.text = gameManager.questions[order[gameManager.questionCounter]];
-        Destroy(gameManager.speechBubbleCorrectAnswers[gameManager.questionCounter-1]);
-        Destroy(gameManager.speechBubbleWrongAnswers[gameManager.questionCounter-1]);
-        gameManager.speechBubbleCorrectAnswers[gameManager.questionCounter].SetActive(true);
-        gameManager.speechBubbleWrongAnswers[gameManager.questionCounter].SetActive(true);
+        try
+        {
+            gameManager.questionCounter++;
+            questionText.text = gameManager.questions[order[gameManager.questionCounter]];
+            Destroy(gameManager.speechBubbleCorrectAnswers[gameManager.questionCounter - 1]);
+            Destroy(gameManager.speechBubbleWrongAnswers[gameManager.questionCounter - 1]);
+            gameManager.speechBubbleCorrectAnswers[gameManager.questionCounter].SetActive(true);
+            gameManager.speechBubbleWrongAnswers[gameManager.questionCounter].SetActive(true);
+        } catch (Exception)
+        {
+            questionText.text = "Geschafft!";
+            Destroy(gameManager.speechBubbleCorrectAnswers[gameManager.questionCounter - 1]);
+            Destroy(gameManager.speechBubbleWrongAnswers[gameManager.questionCounter - 1]);
+        }
     }
 }
