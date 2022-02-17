@@ -54,6 +54,9 @@ public class PlayerController : MonoBehaviour
         // Aufruf der Methoden
         MovePlayer();
         KeepPlayerInBounds(yRange);
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
+        animator.SetFloat("JumpTime", jumpingTimeTimer);
     }
 
     // Methode um Spieler zu bewegen und zu springen
@@ -69,8 +72,6 @@ public class PlayerController : MonoBehaviour
         //transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
         transform.Translate(Vector3.up * verticalInput * Time.deltaTime * speed);
 
-        animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
-
         // Bei Dr�cken der Leertaste Skalierung erhoehen, da Player n�her an Kamera erscheinen soll wegen Sprung
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -85,10 +86,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-   public void OnLanding() 
-    {
-        animator.SetBool("isJumping", false);
-    }
+   //public void OnLanding() 
+    //{
+    //    animator.SetBool("isJumping", isJumping);
+    //}
 
     // Methode um den Spieler im Spielfeld zu behalten
     void KeepPlayerInBounds(float range)
