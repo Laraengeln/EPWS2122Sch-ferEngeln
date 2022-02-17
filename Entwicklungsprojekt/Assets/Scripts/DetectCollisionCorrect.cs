@@ -43,7 +43,7 @@ public class DetectCollisionCorrect : MonoBehaviour
             gameManager.speechBubbleWrongAnswers[gameManager.questionCounter].SetActive(true);
         } catch (Exception)
         {
-            questionText.text = "Geschafft!";
+            questionText.text = "Level completed!";
             Destroy(gameManager.speechBubbleCorrectAnswers[gameManager.questionCounter - 1]);
             Destroy(gameManager.speechBubbleWrongAnswers[gameManager.questionCounter - 1]);
         }
