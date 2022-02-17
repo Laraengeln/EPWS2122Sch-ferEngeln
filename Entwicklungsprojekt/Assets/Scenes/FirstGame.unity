@@ -3542,6 +3542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startScale: 45
+  animator: {fileID: 1772446570}
 --- !u!50 &1772446568
 Rigidbody2D:
   serializedVersion: 4
@@ -3599,10 +3600,10 @@ Animator:
   m_GameObject: {fileID: 1772446564}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: afe87988a5a4284418a757a329bd6ef0, type: 2}
+  m_Controller: {fileID: 9100000, guid: bd5072620675b2d4fbe7deb3b9a59265, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -4767,32 +4768,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctAnswers:
-  - Correct 1
-  - Correct 2
-  - Correct 3
-  - Correct 4
-  - Correct 5
-  - Correct 6
-  - Correct 7
-  - Correct 8
+  - Dualsystem
+  - Mouse and Keyboard
+  - Virus
+  - Writing Codes
+  - Java
+  - 0
+  - Byte
+  - 'Blueprint '
   wrongAnswers:
-  - Wrong 1
-  - Wrong 2
-  - Wrong 3
-  - Wrong 4
-  - Wrong 5
-  - Wrong 6
-  - Wrong 7
-  - Wrong 8
+  - Decimalsystem
+  - Windows
+  - Update
+  - Fixing printers
+  - C++
+  - 1
+  - Bit
+  - List of names
   questions:
-  - Question 1
-  - Question 2
-  - Question 3
-  - Question 4
-  - Question 5
-  - Question 6
-  - Question 7
-  - Question 8
+  - On what kind of numeric system ar PC's based on?
+  - What is an example for a hardware?
+  - How do we call an unwanted error?
+  - What does not belong to the profession of a computer scientist?
+  - Which of the two following is a object-oriented language?
+  - A computer starts counting with the number...?
+  - 'What is bigger: Byte or Bit?'
+  - In terms of coding, what purpose does a class have?
   order: 
   questionText: {fileID: 1345877799}
   correctField: {fileID: 1851585516486612233, guid: 0489c045a8154e747810b6f692b72067, type: 3}

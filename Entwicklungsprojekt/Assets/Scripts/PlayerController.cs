@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     // Initialisierung der oeffentlichen Variablen
     public float startScale = 45f;
+    public Animator animator;           //Damit Skript auf Animation zugreifen kann
 
     // Initialisierung der privaten Variablen
     float horizontalInput;
@@ -46,11 +47,15 @@ public class PlayerController : MonoBehaviour
     {
         // Input f�r Bewegung speichern
         horizontalInput = Input.GetAxis("Horizontal");
+
+
         verticalInput = Input.GetAxis("Vertical");
 
         // Bewegung nach rechts/links abh�ngig von horizontalInput und Bewegung nach oben/unten abh�ngig von verticalInput
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
         transform.Translate(Vector3.up * verticalInput * Time.deltaTime * speed);
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
 
         // Bei Dr�cken der Leertaste Skalierung erhoehen, da Player n�her an Kamera erscheinen soll wegen Sprung
         if (Input.GetKeyDown(KeyCode.Space))
@@ -64,6 +69,11 @@ public class PlayerController : MonoBehaviour
                 jumpTimer = 1.25f;
             }
         }
+    }
+
+   public void OnLanding() 
+    {
+        animator.SetBool("isJumping", false);
     }
 
     // Methode um den Spieler im Spielfeld zu behalten
