@@ -978,7 +978,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -4442,7 +4442,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1976591101
 GameObject:
@@ -4768,32 +4768,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctAnswers:
-  - Correct 1
-  - Correct 2
-  - Correct 3
-  - Correct 4
-  - Correct 5
-  - Correct 6
-  - Correct 7
-  - Correct 8
+  - Dualsystem
+  - Mouse and Keyboard
+  - Virus
+  - Writing Codes
+  - Java
+  - 0
+  - Byte
+  - 'Blueprint '
   wrongAnswers:
-  - Wrong 1
-  - Wrong 2
-  - Wrong 3
-  - Wrong 4
-  - Wrong 5
-  - Wrong 6
-  - Wrong 7
-  - Wrong 8
+  - Decimalsystem
+  - Windows
+  - Update
+  - Fixing printers
+  - C++
+  - 1
+  - Bit
+  - List of names
   questions:
-  - Question 1
-  - Question 2
-  - Question 3
-  - Question 4
-  - Question 5
-  - Question 6
-  - Question 7
-  - Question 8
+  - On what kind of numeric system ar PC's based on?
+  - What is an example for a hardware?
+  - How do we call an unwanted error?
+  - What does not belong to the profession of a computer scientist?
+  - Which of the two following is a object-oriented language?
+  - A computer starts counting with the number...?
+  - 'What is bigger: Byte or Bit?'
+  - In terms of coding, what purpose does a class have?
   order: 
   questionText: {fileID: 1345877799}
   correctField: {fileID: 1851585516486612233, guid: 0489c045a8154e747810b6f692b72067, type: 3}
