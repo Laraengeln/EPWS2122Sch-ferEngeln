@@ -37,6 +37,20 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(startScale, startScale, startScale);
         }
 
+        // Bewegung mit Rotation nach links
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.rotation = new Quaternion(transform.rotation.x, 180, transform.rotation.z, transform.rotation.w);
+            transform.Translate(Vector3.left * horizontalInput * Time.deltaTime * speed);
+        }
+
+        // Bewegung mit Rotation nach rechts
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.rotation = new Quaternion(transform.rotation.x, 0, transform.rotation.z, transform.rotation.w);
+            transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+        }
+
         // Aufruf der Methoden
         MovePlayer();
         KeepPlayerInBounds(yRange);
@@ -51,8 +65,8 @@ public class PlayerController : MonoBehaviour
 
         verticalInput = Input.GetAxis("Vertical");
 
-        // Bewegung nach rechts/links abh�ngig von horizontalInput und Bewegung nach oben/unten abh�ngig von verticalInput
-        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+        // Bewegung nach oben/unten abh�ngig von verticalInput
+        //transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
         transform.Translate(Vector3.up * verticalInput * Time.deltaTime * speed);
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
