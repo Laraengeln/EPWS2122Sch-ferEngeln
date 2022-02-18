@@ -11,11 +11,7 @@ public class Stopwatch : MonoBehaviour
     bool stopWatchActive = false;
     float currentTime;
     public Text currentTimeText;
-<<<<<<< HEAD
-    
-=======
     float highscore;
->>>>>>> 8f3edf295dab486ef59e3a2f6b98357fde6cdb47
 
     // Start is called before the first frame update
     void Start()
@@ -47,11 +43,6 @@ public class Stopwatch : MonoBehaviour
         TimeSpan time = TimeSpan.FromSeconds(currentTime);
         currentTimeText.text = time.ToString(@"mm\:ss\:fff");
 
-<<<<<<< HEAD
-        if (gameManager.questionCounter == gameManager.questions.Length) stopWatchActive = false;
-
-    
-=======
 
         if (gameManager.questionCounter == gameManager.questions.Length)
         {
@@ -67,6 +58,5 @@ public class Stopwatch : MonoBehaviour
         }
 
 
->>>>>>> 8f3edf295dab486ef59e3a2f6b98357fde6cdb47
     }
 }
