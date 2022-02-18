@@ -8,6 +8,8 @@ public class GameProgress : MonoBehaviour
     // Initialisierung der privaten Variablen
     string progressKey;
     int progress;
+    string highscoreKey;
+    float highscore;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,9 @@ public class GameProgress : MonoBehaviour
         {
             SceneManager.LoadSceneAsync(progress);
         }
+
+        highscoreKey = "Highscore";
+        
 
     }
 
