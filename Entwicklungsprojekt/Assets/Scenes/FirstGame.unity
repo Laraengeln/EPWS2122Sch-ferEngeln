@@ -1969,9 +1969,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Where... where am I? Everything looks so... different? But first of all,
-    let\u2019s get out of here. \r\nIt seems, as if have to jump onto the cloud with
-    the correct answer. \r\nI can move with the arrows or \u2018WASD\u2019 and jump
-    with the spacebar. \r\nLet\u2019s try it! "
+    let\u2019s get out of here. \r\nIt seems, as if I have to jump onto the cloud
+    with the correct answer. \r\nI can move with the arrows or \u2018WASD\u2019 and
+    jump with spacebar. \r\nLet\u2019s try it! "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4177,7 +4177,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -30, y: 30}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 31.4207, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1807047361
 MonoBehaviour:
@@ -4255,7 +4255,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7f88162fcf5dfec4da53b4900ddb8971, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2e2a112d4ecc0b4b95d6956aea0da5a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5330,6 +5330,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  speechBubbleStart: {fileID: 330117545}
   questionCounter: 0
 --- !u!4 &2115518628
 Transform:

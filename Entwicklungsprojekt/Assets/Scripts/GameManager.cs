@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public GameObject speechBubbleWrongAnswer;
     public GameObject[] speechBubbleCorrectAnswers = new GameObject[8];
     public GameObject[] speechBubbleWrongAnswers = new GameObject[8];
+    public GameObject speechBubbleStart;
     public int questionCounter;
 
     // Initialisierung der privaten Variablen
@@ -43,19 +44,31 @@ public class GameManager : MonoBehaviour
 
         // Erste Frage der Reihenfolge anzeigen
         questionText.text = questions[order[0]];
+        questionText.enabled = false;
 
         // Spawnpositionen der Felder werden berechnet
         CalculateSpawnPositions();
         // Felder werden in der definierten Reihenfolge gespawnt
         SpawnFields(order);
 
-        speechBubbleCorrectAnswers[0].SetActive(true);
-        speechBubbleWrongAnswers[0].SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
+        try
+        {
+            if (Input.anyKey)
+            {
+                speechBubbleStart.SetActive(false);
+                questionText.enabled = true;
+                speechBubbleCorrectAnswers[0].SetActive(true);
+                speechBubbleWrongAnswers[0].SetActive(true);
+            }
+        } catch(System.Exception)
+        {
+
+        }
        
     }
 
