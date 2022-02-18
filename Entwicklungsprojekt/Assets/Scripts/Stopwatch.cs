@@ -53,6 +53,7 @@ public class Stopwatch : MonoBehaviour
             if (highscore <= PlayerPrefs.GetFloat("Highscore", 0) || PlayerPrefs.GetFloat("Highscore", 0) == 0)
             {
                 PlayerPrefs.SetFloat("Highscore", highscore);
+                currentTimeText.color = Color.green;
                 Debug.Log("Highscore in PlayerPrefs nach Spiel: " + PlayerPrefs.GetFloat("Highscore", 0));
             }
         }
