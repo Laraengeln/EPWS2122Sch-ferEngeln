@@ -11,11 +11,17 @@ public class Stopwatch : MonoBehaviour
     bool stopWatchActive = false;
     float currentTime;
     public Text currentTimeText;
+<<<<<<< HEAD
     
+=======
+    float highscore;
+>>>>>>> 8f3edf295dab486ef59e3a2f6b98357fde6cdb47
 
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Highscore vor Spiel: " + highscore);
+        Debug.Log("Highscore in PlayerPrefs: " + PlayerPrefs.GetFloat("Highscore", 0));
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 
         currentTime = 0;        //Der Anfang wird in Sekunden agezeigt
@@ -38,11 +44,29 @@ public class Stopwatch : MonoBehaviour
                 stopWatchActive = false;
             }
         }
-       TimeSpan time = TimeSpan.FromSeconds(currentTime);
+        TimeSpan time = TimeSpan.FromSeconds(currentTime);
         currentTimeText.text = time.ToString(@"mm\:ss\:fff");
 
+<<<<<<< HEAD
         if (gameManager.questionCounter == gameManager.questions.Length) stopWatchActive = false;
 
     
+=======
+
+        if (gameManager.questionCounter == gameManager.questions.Length)
+        {
+            stopWatchActive = false;
+            highscore = currentTime;
+            Debug.Log("Highscore nach Spiel: " + highscore);
+
+            if (highscore <= PlayerPrefs.GetFloat("Highscore", 0) || PlayerPrefs.GetFloat("Highscore", 0) == 0)
+            {
+                PlayerPrefs.SetFloat("Highscore", highscore);
+                Debug.Log("Highscore in PlayerPrefs nach Spiel: " + PlayerPrefs.GetFloat("Highscore", 0));
+            }
+        }
+
+
+>>>>>>> 8f3edf295dab486ef59e3a2f6b98357fde6cdb47
     }
 }
