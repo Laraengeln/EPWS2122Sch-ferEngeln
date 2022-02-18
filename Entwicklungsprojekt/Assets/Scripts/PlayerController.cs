@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     // Initialisierung der oeffentlichen Variablen
     public float startScale = 45f;
     public Animator animator;           //Damit Skript auf Animation zugreifen kann
+    public AudioSource jumpAudio;
 
     // Initialisierung der privaten Variablen
     float horizontalInput;
@@ -79,6 +80,7 @@ public class PlayerController : MonoBehaviour
             // Nach Sprung Timer erneut setzen
             if (jumpTimer <= 0)
             {
+                jumpAudio.Play();
                 transform.localScale = new Vector3(jumpScale, jumpScale, jumpScale);
                 jumpingTimeTimer = jumpDuration;
                 jumpTimer = 1.25f;

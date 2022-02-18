@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class DetectCollisionWrong : MonoBehaviour
 {
     // Initialisierung der privaten Variablen
-   PlayerController player;
+    PlayerController player;
 
     // Start is called before the first frame update
     void Start()
