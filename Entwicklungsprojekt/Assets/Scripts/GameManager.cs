@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {        
         // Um das aktuelle Level zu speichern, wird der Progress-PlayerPref auf 1 gesetzt
-        PlayerPrefs.SetInt("Progress", 1);
+        PlayerPrefs.SetInt("Progress", 2);
 
         // Mit RandomOrder() wird zu Beginn des Spiels eine Reihenfolge der Felder festgelegt
         order = RandomOrder();
