@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class DetectCollisionCorrect : MonoBehaviour
 {
+    AudioSource correctSound;
     PlayerController player;
     GameManager gameManager;
     TextMeshProUGUI questionText;
@@ -17,6 +18,7 @@ public class DetectCollisionCorrect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        correctSound = GameObject.Find("Correct Sound").GetComponent<AudioSource>();
         player = GameObject.Find("Player").GetComponent<PlayerController>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         questionText = GameObject.Find("Question Text").GetComponent<TextMeshProUGUI>();
@@ -41,6 +43,7 @@ public class DetectCollisionCorrect : MonoBehaviour
             Destroy(gameManager.speechBubbleWrongAnswers[gameManager.questionCounter - 1]);
             gameManager.speechBubbleCorrectAnswers[gameManager.questionCounter].SetActive(true);
             gameManager.speechBubbleWrongAnswers[gameManager.questionCounter].SetActive(true);
+            correctSound.Play();
         } catch (Exception)
         {
             questionText.text = "Level completed!";
