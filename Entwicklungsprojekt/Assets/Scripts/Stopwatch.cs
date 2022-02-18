@@ -11,6 +11,7 @@ public class Stopwatch : MonoBehaviour
     bool stopWatchActive = false;
     float currentTime;
     public Text currentTimeText;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -41,5 +42,7 @@ public class Stopwatch : MonoBehaviour
         currentTimeText.text = time.ToString(@"mm\:ss\:fff");
 
         if (gameManager.questionCounter == gameManager.questions.Length) stopWatchActive = false;
+
+    
     }
 }
