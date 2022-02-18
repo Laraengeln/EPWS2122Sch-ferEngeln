@@ -18,7 +18,7 @@ public class Stopwatch : MonoBehaviour
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 
         currentTime = 0;        //Der Anfang wird in Sekunden agezeigt
-        //stopWatchActive = true;
+        
     }
 
     // Update is called once per frame
